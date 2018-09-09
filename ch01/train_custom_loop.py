@@ -1,12 +1,11 @@
 # coding: utf-8
 import sys
-sys.path.append('...')
+sys.path.append('..')
 import numpy as np
 from common.optimizer import SGD
 from dataset import spiral
 import matplotlib.pyplot as plt
-from two_layer_net improt TwoLayerNet
-
+from two_layer_net import TwoLayerNet
 
 # ハイパーパラメータの設定
 max_epoch = 300

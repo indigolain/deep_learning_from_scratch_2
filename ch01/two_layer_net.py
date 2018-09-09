@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys
-sys.path.append('...')
+sys.path.append('..')
 import numpy as np
 from common.layers import Affine, Sigmoid, SoftmaxWithLoss
 
@@ -12,7 +12,7 @@ class TwoLayerNet:
         W1 = 0.01 * np.random.randn(I, H)
         b1 = np.zeros(H)
         W2 = 0.01 * np.random.randn(H, O)
-        b2 = np.zeros(0)
+        b2 = np.zeros(O)
 
         # レイアの生成
         self.layers = [
@@ -31,6 +31,7 @@ class TwoLayerNet:
     def predict(self, x):
         for layer in self.layers:
             x = layer.forward(x)
+        return x
 
     def forward(self, x, t):
         score = self.predict(x)
